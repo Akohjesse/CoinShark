@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lakki+Reddy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+// variables
+
+@import './variables&mixins.scss';
+
+::-webkit-scrollbar{
+    display: none;
+}
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Raleway', sans-serif;
+    overflow-x:hidden;
+}
+.small-cursor{
+    width:8px;
+    height:8px;
+    border-radius: 100%;
+    border:1px solid #f56d7a;
+    background:#f6ac3c;
+    transform:translate(-50%, -50%);
+    position: absolute;
+    transition: 0 0s ease-in;
+    z-index:15;
+}
+
+header{
+    @include width-margin(0px);
+    transition: 0.3s ease-in;
+    width:100%;
+    padding:5px 0px;
+background:$main;
+    color:rgb(255, 255, 255);
+    z-index:20;
+    .wrap{
+        width:90%;
+       @include flex(space-between);
+        @include width-margin(3%);
+        .logo{
+            width:40%;
+            font-family: 'Bilbo Swash Caps', cursive;
+        }
+        nav{
+            width:40%;
+            ul{
+               li{
+                  list-style: none;
+                  font-size: 0.9em;
+                  display: inline-flex;
+                  padding:0 17px;
+                  
+               }
+            }
+        }
+        .menu-bar{
+            i{
+                font-size:1.4em;
+                font-weight:700;
+                color:rgb(243, 243, 243);
+               
+            }
+            display: none;
+        }
+        .account_user{
+            @include flex(space-between);
+            align-items: flex-end;
+            .sign-in{
+                @include buttons($fore-color);
+                color:white;
+                margin:0 8px;
+            }
+            .sign-up{
+                @include buttons(white);
+                color:rgb(0, 124, 128);
+                border:1px solid grey;
+                align-items: flex-end;
+            }
+        }
+    }
+}
+
+@mixin svg($enter){
+    margin-top:$enter;
+    height:100%;
+    width: 100%;
+}
+.menu_box{
+    display: none;
+    width:100%;
+    position: fixed;
+    top:0;
+    z-index: 90;
+    height:100vh;
+    backdrop-filter: brightness(0.5);
+    position:fixed;
+    .wrap{
+        padding:20px 30px;
+        width:80%;
+        border-radius:13px;
+        background-color:#233446;
+        margin:50px auto;
+        .menu_box_item{
+            ul{
+                li{
+                    margin:20px 0;
+                    font-weight: 700;
+                    font-size: 1.2em;
+                    color:rgb(255, 255, 255);
+                    list-style:none;
+                    &:hover{
+                        color:rgb(255, 145, 0);
+                    }
+                }
+            }
+        }
+    }
+}
+.svgHome{
+   @include svg(-3px);
+}
+.begin{
+    width:100%;
+    background: $main;
+    color:white;
+    animation:western 1s ease-in infinite ;
+    padding:40px 0px;
+    .wrap{
+        @include flex(space-around);
+        width:90%;
+        padding:40px 0;
+        @include width-margin(0px);
+        align-content:center ;
+        .start{
+            text-align: left;
+            width:50%;
+            h2{
+                font-size: 2em;
+                font-family: 'Lakki Reddy', cursive;
+            }
+            p{
+                margin:20px 0px;
+                line-height: 30px;
+            }
+            .btn{
+                margin:30px 0px;
+                button{
+                    font-size: 14px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    border:none;
+                    height: 38px;
+                    text-transform: uppercase;
+                    font-weight: 800;
+                    background-color: $fore-color;
+                    color:rgb(255, 255, 255);
+                    padding:10px 25px;
+                    line-height: 1em;
+                }
+            }
+        }
+        .end{
+            animation: levidate 3s ease-in-out 0s infinite normal forwards;
+            width:50%;
+            .image{
+                width:100%;
+                @include width-margin(0px);
+                img{
+                    width:100%;
+                }
+            }
+        }
+    }
+
+}
+.alt_coins{
+    width:100%;
+    margin-top:-15%;
+   
+    .wrap{
+        width:90%;
+        margin:3% auto;
+       @include flex(space-between);
+        padding:40px 0px;
+        .item{
+            width:20%;
+            display: flex;
+            align-items: center;
+            justify-content:space-evenly;
+            .img{
+                width:20%;
+                    img{
+                    width:100%;
+                    }
+            }
+            .txt{
+                h4{
+                    margin: 5px 0px;
+                }
+                a{ 
+                    font-size:1em ;
+                    text-decoration: none;
+                    color:$secof-col;
+                }
+            }
+        }
+    }
+}
+.how{
+    background:$main;
+  
+    .wrap{
+    
+        @include width-margin(10px);
+       @include flex(space-between);
+        padding:10% 0px;
+        .txt{
+            width:45%;
+            h3{
+                color:$fore-color;
+                margin:10px 0px;
+            }
+            p{
+                color:rgb(255, 255, 255);
+                z-index:5;
+                line-height: 35px;
+            }
+            .image{
+                transform: rotateZ(20deg);
+                position:relative;
+                top:20px;
+                width: 100%;
+                background-color: $fore-color;
+                border-radius: 10px;
+                padding:20px;
+                img{
+                    width:100%;
+                }
+            }
+            .image_01{
+                margin-top:40px;
+                width: 80%;
+                background-color: $fore-color;
+                border-radius: 10px;
+                padding:10px;
+                img{
+                    width:100%;
+                }
+            }
+        }
+    }
+}
+.container_01{
+   @include containers(90%, 50%, 7%);
+   button{
+       background-color: $secof-col !important;
+   }
+   
+            
+}
+.container_02{
+    background:$main;
+    .wrap{
+        flex-direction: row-reverse;
+        padding:7% 0px;
+        .start{
+            color:rgb(255, 255, 255);
+        }
+
+    }
+    .end{
+        width:40%;
+    }
+    @include containers(100%, 50%, 10%);
+}
+
+@mixin align($margin-top){
+    margin:$margin-top auto;
+}
+footer{
+    margin-top: 30px;
+    background:#233446;
+    background-size: cover;
+    .wrap{
+        width:95%;
+        padding:10% 10px;
+        @include align(0%);
+        .sideBYside{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            ul{
+                a{
+                    text-decoration: none;
+                }
+              li{
+                  list-style-type: none;
+                  margin:10px 0px;
+                  font-size:0.9em;
+                  color:rgb(255, 255, 255);
+                  a{
+                      text-decoration: none;
+                      color:rgb(255, 255, 255);
+                  }
+                 
+              }
+            }
+        }
+        .socials{
+            margin:5% 0px;
+            text-align: center;
+            i{
+                font-size:1.2em;
+       
+                padding:0px 4%;
+                color:rgb(255, 255, 255);
+            }
+            a{
+                text-decoration: none;
+            }
+        }
+        .credits{
+            text-align: center;
+            font-size:0.9em;
+            color:rgb(255, 255, 255);
+            a{
+                color: orange;
+            }
+        }
+    }
+}
+@keyframes levidate {
+    0%{transform: translate(0)}
+    50%{transform:translateY(-20px)}
+    100%{transform: translate(0)}
+}
+@import './responsive.scss';
